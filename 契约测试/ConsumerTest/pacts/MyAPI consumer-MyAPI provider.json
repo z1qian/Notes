@@ -1,0 +1,51 @@
+{
+  "consumer": {
+    "name": "MyAPI consumer"
+  },
+  "interactions": [
+    {
+      "description": "A request to calc Abs",
+      "pending": false,
+      "providerStates": [
+        {
+          "name": "Abs"
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "path": "/My/Abs",
+        "query": {
+          "i": [
+            "-2"
+          ]
+        }
+      },
+      "response": {
+        "body": {
+          "content": 2,
+          "contentType": "application/json",
+          "encoded": false
+        },
+        "headers": {
+          "Content-Type": [
+            "application/json"
+          ]
+        },
+        "status": 200
+      },
+      "type": "Synchronous/HTTP"
+    }
+  ],
+  "metadata": {
+    "pactRust": {
+      "ffi": "0.4.5",
+      "models": "1.1.2"
+    },
+    "pactSpecification": {
+      "version": "4.0"
+    }
+  },
+  "provider": {
+    "name": "MyAPI provider"
+  }
+}
