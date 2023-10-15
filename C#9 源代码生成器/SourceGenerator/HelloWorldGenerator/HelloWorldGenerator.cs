@@ -26,7 +26,7 @@ public class HelloWorldGenerator : ISourceGenerator
                 public static void Hello() 
                 {
                     Console.WriteLine("Hello from generated code!");
-                    Console.WriteLine("The following source files existed in the compilation:");
+                    Console.WriteLine("编译时存在以下源文件：");
             """);
 
         // using the context, get a list of files from the syntax trees in the users compilation
@@ -35,6 +35,7 @@ public class HelloWorldGenerator : ISourceGenerator
         // add the filepath of each tree to the class we're building
         foreach (SyntaxTree tree in syntaxTrees)
         {
+            //将编译的源文件的文件路径写入控制台
             sourceBuilder.AppendLine(
             $$"""
               
@@ -49,7 +50,7 @@ public class HelloWorldGenerator : ISourceGenerator
             }
             """);
         // inject the created source into the users compilation
-        context.AddSource("helloWorld.cs", SourceText.From(sourceBuilder.ToString(), Encoding.UTF8));
+        context.AddSource("helloWorld.generated.cs", SourceText.From(sourceBuilder.ToString(), Encoding.UTF8));
     }
 
     /// <summary>

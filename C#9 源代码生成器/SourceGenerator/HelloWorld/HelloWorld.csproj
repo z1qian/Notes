@@ -5,11 +5,14 @@
 		<TargetFramework>net6.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
+		<!--.\HelloWorld\obj\Debug\net6.0\generated\HelloWorldGenerator\HelloWorldGenerator.HelloWorldGenerator-->
+		<EmitCompilerGeneratedFiles>false</EmitCompilerGeneratedFiles>
+		
+		<CompilerGeneratedFilesOutputPath>C:\Users\67269\Desktop\1</CompilerGeneratedFilesOutputPath>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\HelloWorldGenerator\HelloWorldGenerator.csproj"  OutputItemType="Analyzer"
-                      ReferenceOutputAssembly="false"/>
+		<ProjectReference Include="..\HelloWorldGenerator\HelloWorldGenerator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 		<!--<Analyzer Include="C:\Users\67269\Desktop\C#9 源代码生成器\SourceGenerator\HelloWorldGenerator\bin\Debug\netstandard2.0\HelloWorldGenerator.dll"/>-->
 	</ItemGroup>
 </Project>
