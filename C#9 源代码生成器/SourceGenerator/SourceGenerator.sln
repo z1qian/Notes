@@ -11,7 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1", "1", "{3EE5ACF0-AEEB-4A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2", "2", "{C9AB0813-CD4F-4788-B056-4C756E88B37A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquatableGenerator", "EquatableGenerator\EquatableGenerator.csproj", "{81494F46-668F-4723-9A45-87E4A38AEDC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EquatableGenerator", "EquatableGenerator\EquatableGenerator.csproj", "{81494F46-668F-4723-9A45-87E4A38AEDC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquatableApp", "EquatableApp\EquatableApp.csproj", "{09A36D1B-659E-4C47-9D30-E7A1D01C1D10}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,10 @@ Global
 		{81494F46-668F-4723-9A45-87E4A38AEDC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81494F46-668F-4723-9A45-87E4A38AEDC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81494F46-668F-4723-9A45-87E4A38AEDC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09A36D1B-659E-4C47-9D30-E7A1D01C1D10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09A36D1B-659E-4C47-9D30-E7A1D01C1D10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09A36D1B-659E-4C47-9D30-E7A1D01C1D10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09A36D1B-659E-4C47-9D30-E7A1D01C1D10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 		{917911E6-52A3-4493-B325-C64F658FB3BB} = {3EE5ACF0-AEEB-4A33-BD2A-B5440649646B}
 		{B1236CBD-839B-4E09-A892-35237E4EA3B2} = {3EE5ACF0-AEEB-4A33-BD2A-B5440649646B}
 		{81494F46-668F-4723-9A45-87E4A38AEDC1} = {C9AB0813-CD4F-4788-B056-4C756E88B37A}
+		{09A36D1B-659E-4C47-9D30-E7A1D01C1D10} = {C9AB0813-CD4F-4788-B056-4C756E88B37A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7AFB6E75-F1F7-494F-B815-216E1A910D9F}

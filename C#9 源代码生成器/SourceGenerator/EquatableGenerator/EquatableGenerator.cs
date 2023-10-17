@@ -41,12 +41,16 @@ internal class EquatableGenerator : ISourceGenerator
         context.AddSource("ImplementEquatableAttribute", SourceText.From(attributeText, Encoding.UTF8));
         //context.AddSource("ImplementEquatableAttribute.generated.cs", SourceText.From(attributeText, Encoding.UTF8));
 
+        // 检查语法 receiver 是否为 SyntaxReceiver 类型，如果不是，直接返回。
         if (context.SyntaxReceiver is not SyntaxReceiver syntaxReceiver)
             return;
 
+        // options 是C#的编译选项，从这里我们可以获取到编译器的语法分析配置等信息。
         CSharpParseOptions? options = (context.Compilation as CSharpCompilation)?.SyntaxTrees[0].Options as CSharpParseOptions;
+        // 添加特性文本到编译器对象中。
         Compilation compilation = context.Compilation.AddSyntaxTrees(CSharpSyntaxTree.ParseText(SourceText.From(attributeText, Encoding.UTF8), options));
 
+        // 获取特性的符号对象，用于后续查询当前编译器中的特定类(class)符合特定定义。
         INamedTypeSymbol? attributeSymbol = compilation.GetTypeByMetadataName("CodeGenerationSample.ImplementEquatableAttribute");
 
         //接下来，检查 SyntaxReceiver 中存储的每个候选类是否应用了ImplementEquatableAttribute。
@@ -62,7 +66,8 @@ internal class EquatableGenerator : ISourceGenerator
                 typeSymbols.Add(typeSymbol);
             }
         }
-        //在选代候选类后，选代剩下的候选类来添加它们的源代码。
+
+        // 对符合特定特性(attribute)定义的类(class)进行源代码生成。
         foreach (INamedTypeSymbol typeSymbol in typeSymbols)
         {
             string classSource = GetClassSource(typeSymbol);
@@ -89,6 +94,7 @@ internal class EquatableGenerator : ISourceGenerator
             {
                 private static partial bool IsTheSame({{typeSymbol.Name}}? left, {{typeSymbol.Name}}? right);
 
+                ///<inheritdoc/>
                 public override bool Equals(object? obj) => this == obj as {{typeSymbol.Name}};
 
                 public bool Equals({{typeSymbol.Name}}? other) => this == other;
