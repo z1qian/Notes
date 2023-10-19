@@ -6,3 +6,7 @@ if (b1 == b2)
 {
     Console.WriteLine("the same book");
 }
+else
+{
+    Console.WriteLine("not the same book");
+}

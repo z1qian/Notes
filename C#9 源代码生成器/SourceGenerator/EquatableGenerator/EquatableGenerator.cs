@@ -23,12 +23,12 @@ internal class EquatableGenerator : ISourceGenerator
 
     public void Initialize(GeneratorInitializationContext context)
     {
-#if DEBUG
-        if (!Debugger.IsAttached)
-        {
-            Debugger.Launch();
-        }
-#endif
+//#if DEBUG
+//        if (!Debugger.IsAttached)
+//        {
+//            Debugger.Launch();
+//        }
+//#endif
         Debug.WriteLine("Initialize Code Generator");
         // 注册一个语法接收器，该接收器将在每次生成时创建
         context.RegisterForSyntaxNotifications(() => new SyntaxReceiver());
@@ -38,7 +38,8 @@ internal class EquatableGenerator : ISourceGenerator
     {
         Debug.WriteLine("Execute code generator");
         // add the attribute text
-        context.AddSource("ImplementEquatableAttribute.generated.cs", SourceText.From(attributeText, Encoding.UTF8));
+        context.AddSource("ImplementEquatableAttribute.generated.cs",
+            SourceText.From(attributeText, Encoding.UTF8));
 
         // 检查语法 receiver 是否为 SyntaxReceiver 类型，如果不是，直接返回。
         if (context.SyntaxReceiver is not SyntaxReceiver syntaxReceiver)
@@ -70,7 +71,8 @@ internal class EquatableGenerator : ISourceGenerator
         foreach (INamedTypeSymbol typeSymbol in typeSymbols)
         {
             string classSource = GetClassSource(typeSymbol);
-            context.AddSource($"{typeSymbol.Name}.generated.cs", SourceText.From(classSource, Encoding.UTF8));
+            context.AddSource($"{typeSymbol.Name}.generated.cs",
+                SourceText.From(classSource, Encoding.UTF8));
         }
     }
 
