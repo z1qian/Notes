@@ -5,15 +5,15 @@ public class DeepThoughtTest
     [Fact]
     public void ResultOfTheAnswerToTheUltimateQuestionOfLifeTheUniverseAndEverything()
     {
-        // arrange
+        // arrange£®∞≤≈≈£©
         int expected = 42;
         var dt = new DeepThought();
 
-        // act
+        // act£®––∂Ø£©
         int actual =
           dt.TheAnswerToTheUltimateQuestionOfLifeTheUniverseAndEverything();
 
-        // assert
+        // assert£®∂œ—‘£©
         Assert.Equal(expected, actual);
     }
 }
