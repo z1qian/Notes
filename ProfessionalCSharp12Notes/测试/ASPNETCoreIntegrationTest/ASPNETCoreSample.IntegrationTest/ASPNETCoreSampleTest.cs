@@ -2,6 +2,7 @@
 
 namespace ASPNETCoreSample.IntegrationTest;
 
+//IClassFixture：https://www.cnblogs.com/pikqu/p/12941029.html
 public class ASPNETCoreSampleTest : IClassFixture<WebApplicationFactory<Program>>
 {
     class WebApplication : WebApplicationFactory<Program>
